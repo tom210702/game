@@ -4,24 +4,27 @@
 
 # Simulation Battle Game
 
-è‡ªå¾‹è¡Œå‹•ã‚’çµ„ã‚“ã ãƒ¦ãƒ‹ãƒƒãƒˆãŒæˆ¦ã†ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³å¯¾æˆ¦ã‚²ãƒ¼ãƒ ã§ã™ã€‚Gemini ã‚„ãã®ä»–ã®å¤–éƒ¨ API ã«ã¯ä¾å­˜ã—ã¦ã„ãªã„ãŸã‚ã€Node.js ã•ãˆã‚ã‚Œã°ãƒ­ãƒ¼ã‚«ãƒ«ã¨ GitHub Pages ã®ã©ã¡ã‚‰ã§ã‚‚å®Œçµã—ã¾ã™ã€‚
+©—¥s“®‚ğ?E??‚¾ƒ†ƒjƒbƒg‚ªí‚ŸE??ƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‘ÎíƒQ[ƒ€‚Å‚·AEemini ‚ßE??‚Ì‘¼?EŠO•” API ‚É‚ÍˆË‘¶‚µ‚Ä‚ŸE??‚ŸE??‚ßANode.js ‚³‚¦‚ ‚ê‚Îƒ[ƒJƒ‹‚Æ GitHub Pages ‚Ì‚Ç‚¿‚ç‚Å‚àŠ®Œ‹‚µ‚Ü‚·AE
 
 ## Run Locally
 
 **Prerequisites:** Node.js 18+
 
-1. Install dependencies: `npm install`
-2. Start the dev server: `npm run dev`
-3. Build for production: `npm run build`
+1. Install dependencies: 
+pm install
+2. Start the dev server: 
+pm run dev
+3. Build for production: 
+pm run build
 
-ç”Ÿæˆã•ã‚ŒãŸ `dist/` ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã¯ä»»æ„ã®é™çš„ãƒ›ã‚¹ãƒ†ã‚£ãƒ³ã‚°ã¸ãã®ã¾ã¾ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰ã§ãã¾ã™ã€‚
+¶?E‚³‚ê‚ŸEdist/ ƒ`E??ƒŒƒNƒgƒŠ‚Í”CˆÓ?EÃ“IƒzƒXƒ`E??ƒ“ƒO‚Ö‚»?E‚Ü‚ÜƒAƒ`E?Eƒ[ƒh‚Å‚«‚Ü‚·AE
 
 ## Deploy to GitHub Pages
 
-ã“ã®ãƒªãƒã‚¸ãƒˆãƒªã«ã¯ GitHub Actions ãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼ (`.github/workflows/deploy.yml`) ãŒå«ã¾ã‚Œã¦ãŠã‚Šã€`main` ãƒ–ãƒ©ãƒ³ãƒã« push ã•ã‚Œã‚‹ãŸã³ã« Vite ãƒ“ãƒ«ãƒ‰ã‚’å®Ÿè¡Œã—ã€`gh-pages` ãƒ–ãƒ©ãƒ³ãƒã¸å…¬é–‹ç‰©ã‚’é…ç½®ã—ã¾ã™ã€‚
+‚±?EƒŠƒ|ƒWƒgƒŠ‚É‚Í GitHub Actions ƒ[ƒNƒtƒ[ (.github/workflows/deploy.yml) ‚ªŠÜ‚Ü‚ê‚Ä‚¨‚èAmain ƒuƒ‰ƒ“ƒ`‚É push ‚³‚ê‚é‚½‚Ñ‚É Vite ƒrƒ‹ƒh‚ğÀs‚µAgh-pages ƒuƒ‰ƒ“ƒ`‚ÖŒöŠJ•¨‚ğ?E’u‚µ‚Ü‚·AE
 
-1. GitHub ãƒªãƒã‚¸ãƒˆãƒªã‚’ä½œæˆã—ã€ã“ã®ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã‚’ push ã—ã¾ã™ã€‚
-2. ãƒªãƒã‚¸ãƒˆãƒªã® **Settings â†’ Pages** ã§ **Source = GitHub Actions** ã‚’é¸æŠã—ã¾ã™ã€‚
-3. `main` ãƒ–ãƒ©ãƒ³ãƒã« push ã™ã‚‹ã¨ã€è‡ªå‹•ã§ `gh-pages` ãƒ–ãƒ©ãƒ³ãƒã¸ãƒ‡ãƒ—ãƒ­ã‚¤ã•ã‚Œã€`https://<ãƒ¦ãƒ¼ã‚¶ãƒ¼å>.github.io/<ãƒªãƒã‚¸ãƒˆãƒªå>/` ã§ãƒ—ãƒ¬ã‚¤ã§ãã¾ã™ã€‚
+1. GitHub ƒŠƒ|ƒWƒgƒŠ‚ğì?E‚µA‚±‚ÌƒvƒƒWƒFƒNƒg‚ğ push ‚µ‚Ü‚·AE
+2. ƒŠƒ|ƒWƒgƒŠ‚Ì **Settings ?EPages** ‚Å **Source = GitHub Actions** ‚ğ‘I‘ğ‚µ‚Ü‚·AE
+3. main ƒuƒ‰ƒ“ƒ`‚É push ‚·‚é‚ÆA?E“®‚Å gh-pages ƒuƒ‰ƒ“ƒ`‚Öƒ`E?EƒƒC‚³‚êAhttps://<ƒ†[ƒU[™ÜE.github.io/<ƒŠƒ|ƒWƒgƒŠ™ÜE/ ‚ÅƒvƒŒƒC‚Å‚«‚Ü‚·AE
 
-Secrets ã‚„ API ã‚­ãƒ¼ã®è¨­å®šã¯ä¸è¦ã§ã™ã€‚
+Secrets ‚ßEAPI ƒL[‚Ìİ’è?E•s—v‚Å‚·AE
