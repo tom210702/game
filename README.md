@@ -1,30 +1,21 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
-
 # Simulation Battle Game
 
-©—¥s“®‚ğ?E??‚¾ƒ†ƒjƒbƒg‚ªí‚ŸE??ƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‘ÎíƒQ[ƒ€‚Å‚·AEemini ‚ßE??‚Ì‘¼?EŠO•” API ‚É‚ÍˆË‘¶‚µ‚Ä‚ŸE??‚ŸE??‚ßANode.js ‚³‚¦‚ ‚ê‚Îƒ[ƒJƒ‹‚Æ GitHub Pages ‚Ì‚Ç‚¿‚ç‚Å‚àŠ®Œ‹‚µ‚Ü‚·AE
+- Live (GitHub Pages): https://tom210702.github.io/game/
+- 3æ©Ÿã®è¡Œå‹•ã‚’ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã—ã¦è‡ªå‹•ãƒãƒˆãƒ«ã‚’è¦³æˆ¦ã™ã‚‹ã‚·ãƒ³ãƒ—ãƒ«ãªã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚²ãƒ¼ãƒ ã§ã™ã€‚
 
-## Run Locally
+## éŠã³æ–¹
+1. ã€Œè¨­å®šã€ç”»é¢ã§å„ãƒ¦ãƒ‹ãƒƒãƒˆã®ã‚¿ã‚¤ãƒ—ã¨è¡Œå‹•ã‚’é¸æŠ
+2. ãƒãƒˆãƒ«é–‹å§‹ã§çµæœã‚’è¦³æˆ¦ï¼ˆãƒ‰ãƒ©ãƒƒã‚°ã§è¦–ç‚¹ç§»å‹•ï¼‰
+3. å‹æ•—ãŒä»˜ã„ãŸã‚‰å†è¨­å®šã§ã‚„ã‚Šç›´ã—
 
-**Prerequisites:** Node.js 18+
+## ãƒ­ãƒ¼ã‚«ãƒ«ã§å‹•ã‹ã™
+å‰æ: Node.js 18+
 
-1. Install dependencies: 
-pm install
-2. Start the dev server: 
-pm run dev
-3. Build for production: 
-pm run build
+```bash
+npm install
+npm run dev   # localhost ã§èµ·å‹•
+npm run build # æœ¬ç•ªãƒ“ãƒ«ãƒ‰
+```
 
-¶?E‚³‚ê‚ŸEdist/ ƒ`E??ƒŒƒNƒgƒŠ‚Í”CˆÓ?EÃ“IƒzƒXƒ`E??ƒ“ƒO‚Ö‚»?E‚Ü‚ÜƒAƒ`E?Eƒ[ƒh‚Å‚«‚Ü‚·AE
-
-## Deploy to GitHub Pages
-
-‚±?EƒŠƒ|ƒWƒgƒŠ‚É‚Í GitHub Actions ƒ[ƒNƒtƒ[ (.github/workflows/deploy.yml) ‚ªŠÜ‚Ü‚ê‚Ä‚¨‚èAmain ƒuƒ‰ƒ“ƒ`‚É push ‚³‚ê‚é‚½‚Ñ‚É Vite ƒrƒ‹ƒh‚ğÀs‚µAgh-pages ƒuƒ‰ƒ“ƒ`‚ÖŒöŠJ•¨‚ğ?E’u‚µ‚Ü‚·AE
-
-1. GitHub ƒŠƒ|ƒWƒgƒŠ‚ğì?E‚µA‚±‚ÌƒvƒƒWƒFƒNƒg‚ğ push ‚µ‚Ü‚·AE
-2. ƒŠƒ|ƒWƒgƒŠ‚Ì **Settings ?EPages** ‚Å **Source = GitHub Actions** ‚ğ‘I‘ğ‚µ‚Ü‚·AE
-3. main ƒuƒ‰ƒ“ƒ`‚É push ‚·‚é‚ÆA?E“®‚Å gh-pages ƒuƒ‰ƒ“ƒ`‚Öƒ`E?EƒƒC‚³‚êAhttps://<ƒ†[ƒU[™ÜE.github.io/<ƒŠƒ|ƒWƒgƒŠ™ÜE/ ‚ÅƒvƒŒƒC‚Å‚«‚Ü‚·AE
-
-Secrets ‚ßEAPI ƒL[‚Ìİ’è?E•s—v‚Å‚·AE
+## ãƒ‡ãƒ—ãƒ­ã‚¤
+main ãƒ–ãƒ©ãƒ³ãƒã¸ã® push ã§ GitHub Actions (`.github/workflows/deploy.yml`) ãŒ Vite ã‚’ãƒ“ãƒ«ãƒ‰ã—ã€GitHub Pages ã«è‡ªå‹•ãƒ‡ãƒ—ãƒ­ã‚¤ã—ã¾ã™ã€‚
