@@ -4,7 +4,8 @@ import {
 import { 
   UNIT_PROPERTIES, STAGE_WIDTH, STAGE_HEIGHT, UNIT_SIZE, MOVE_SPEED, 
   SNIPER_STUN_FRAMES, PLAYER_TEAM_COLOR, OPPONENT_TEAM_COLOR, TEAM_MARKER_SIZE, 
-  INITIAL_HP 
+  INITIAL_HP, CORNER_TELEPORT_TRAPS, TELEPORT_TRAP_SAFE_MARGIN, TELEPORT_TRAP_COLOR, 
+  TELEPORT_TRAP_RING_COLOR 
 } from '../constants';
 import { audioService } from './audioService';
 
@@ -36,6 +37,41 @@ export const createUnit = (
     properties,
     isPlayer
   };
+};
+
+const clampUnitToStage = (unit: Unit) => {
+  unit.x = Math.max(UNIT_SIZE / 2, Math.min(unit.x, STAGE_WIDTH - UNIT_SIZE / 2));
+  unit.y = Math.max(UNIT_SIZE / 2, Math.min(unit.y, STAGE_HEIGHT - UNIT_SIZE / 2));
+};
+
+const getRandomSafePosition = () => {
+  const margin = TELEPORT_TRAP_SAFE_MARGIN;
+  for (let i = 0; i < 25; i++) {
+    const candidate = {
+      x: margin + Math.random() * (STAGE_WIDTH - margin * 2),
+      y: margin + Math.random() * (STAGE_HEIGHT - margin * 2)
+    };
+    const insideTrap = CORNER_TELEPORT_TRAPS.some(trap => {
+      const dist = Math.hypot(candidate.x - trap.x, candidate.y - trap.y);
+      return dist <= trap.radius + UNIT_SIZE / 2;
+    });
+    if (!insideTrap) return candidate;
+  }
+  return { x: STAGE_WIDTH / 2, y: STAGE_HEIGHT / 2 };
+};
+
+const applyCornerTeleportTrap = (unit: Unit) => {
+  for (const trap of CORNER_TELEPORT_TRAPS) {
+    const dist = Math.hypot(unit.x - trap.x, unit.y - trap.y);
+    if (dist <= trap.radius + UNIT_SIZE / 2) {
+      const nextPos = getRandomSafePosition();
+      unit.x = nextPos.x;
+      unit.y = nextPos.y;
+      clampUnitToStage(unit);
+      audioService.play('trap');
+      break;
+    }
+  }
 };
 
 // Attack logic
@@ -199,11 +235,12 @@ export const updateGameState = (state: GameState): void => {
       }
 
       if (actionTaken) {
-        unit.x = Math.max(UNIT_SIZE / 2, Math.min(unit.x, STAGE_WIDTH - UNIT_SIZE / 2));
-        unit.y = Math.max(UNIT_SIZE / 2, Math.min(unit.y, STAGE_HEIGHT - UNIT_SIZE / 2));
+        clampUnitToStage(unit);
         unit.currentActionIndex = (unit.currentActionIndex + 1) % unit.actions.length;
       }
     }
+
+    applyCornerTeleportTrap(unit);
   });
 
   // Projectiles
@@ -326,6 +363,19 @@ export const renderGame = (
 
   ctx.save();
   ctx.translate(-camX, -camY);
+
+  // Draw Teleport Traps
+  CORNER_TELEPORT_TRAPS.forEach(trap => {
+    ctx.beginPath();
+    ctx.arc(trap.x, trap.y, trap.radius, 0, Math.PI * 2);
+    ctx.fillStyle = TELEPORT_TRAP_COLOR;
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(trap.x, trap.y, trap.radius * 0.6, 0, Math.PI * 2);
+    ctx.strokeStyle = TELEPORT_TRAP_RING_COLOR;
+    ctx.lineWidth = 3;
+    ctx.stroke();
+  });
 
   // Draw Units
   [...state.playerUnits, ...state.opponentUnits].forEach(unit => {

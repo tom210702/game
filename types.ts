@@ -78,6 +78,12 @@ export interface Trap {
   damageCooldown: number;
 }
 
+export interface TeleportTrap {
+  x: number;
+  y: number;
+  radius: number;
+}
+
 export interface GameState {
   playerUnits: Unit[];
   opponentUnits: Unit[];

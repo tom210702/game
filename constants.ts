@@ -1,4 +1,4 @@
-import { UnitType, ActionKey, ActionDef, UnitProperty } from './types';
+import { UnitType, ActionKey, ActionDef, UnitProperty, TeleportTrap } from './types';
 
 export const CANVAS_VIEWPORT_WIDTH = 360;
 export const CANVAS_VIEWPORT_HEIGHT = 480;
@@ -16,6 +16,17 @@ export const MAX_ACTIONS = 10;
 export const PLAYER_TEAM_COLOR = '#48bb78';
 export const OPPONENT_TEAM_COLOR = '#e53e3e';
 export const TEAM_MARKER_SIZE = 8;
+
+export const TELEPORT_TRAP_RADIUS = 35;
+export const TELEPORT_TRAP_SAFE_MARGIN = TELEPORT_TRAP_RADIUS + UNIT_SIZE;
+export const TELEPORT_TRAP_COLOR = '#7c3aed';
+export const TELEPORT_TRAP_RING_COLOR = '#c084fc';
+export const CORNER_TELEPORT_TRAPS: TeleportTrap[] = [
+  { x: TELEPORT_TRAP_RADIUS, y: TELEPORT_TRAP_RADIUS, radius: TELEPORT_TRAP_RADIUS },
+  { x: STAGE_WIDTH - TELEPORT_TRAP_RADIUS, y: TELEPORT_TRAP_RADIUS, radius: TELEPORT_TRAP_RADIUS },
+  { x: TELEPORT_TRAP_RADIUS, y: STAGE_HEIGHT - TELEPORT_TRAP_RADIUS, radius: TELEPORT_TRAP_RADIUS },
+  { x: STAGE_WIDTH - TELEPORT_TRAP_RADIUS, y: STAGE_HEIGHT - TELEPORT_TRAP_RADIUS, radius: TELEPORT_TRAP_RADIUS }
+];
 
 export const ACTION_TYPES: Record<ActionKey, ActionDef> = {
   MOVE_FORWARD: { text: '進む', mark: '⬆️' },
